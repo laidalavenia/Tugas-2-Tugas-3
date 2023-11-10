@@ -145,9 +145,9 @@ class Students {
         return $result;
     } # Ditugaskan!
     
-    static function deleteWhere($clause) {
+    static function deleteWhere($clause, $name, $email, $role_fk) {
         global $conn;
-        $sql = "DELETE FROM students WHERE $clause";
+        $sql = "DELETE FROM students SET name = '$name', email = '$email', role_fk = $role_fk WHERE $clause";
         $result = $conn->query($sql);
         return $result;
     } # Ditugaskan!
