@@ -106,9 +106,9 @@ class Students {
         return $arr;
     } # Ditugaskan!
     
-    static function selectWhere($clause) {
+    static function selectWhere($clause,$id, $name, $email, $role_fk) {
         global $conn;
-            $sql = "SELECT * FROM students WHERE $clause";
+            $sql = "SELECT * FROM students SET name = '$name', email = '$email', role_fk = $role_fk WHERE $clause";
             $result = $conn->query($sql);
             $arr = array();
     
